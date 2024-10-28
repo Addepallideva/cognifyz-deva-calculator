@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* You can change this to your desired background */
+            font-family: Arial, sans-serif;
+            background-image: url('bg.jpeg'); /* Add your background image */
+            background-size: cover;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .circle-input {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 10px;
+        }
+
+        .circle-button {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            background-color: rgba(0, 150, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circle-container">
+        <div class="circle-input">
+            <input type="number" id="num1" placeholder="0" style="border: none; background: transparent; width: 60%; text-align: center;">
+        </div>
+        <div class="circle-input">
+            <input type="number" id="num2" placeholder="0" style="border: none; background: transparent; width: 60%; text-align: center;">
+        </div>
+    </div>
+    <div class="circle-button" onclick="calculateSum()">Add</div>
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculateSum() {
+            const num1 = parseFloat(document.getElementById('num1').value) || 0;
+            const num2 = parseFloat(document.getElementById('num2').value) || 0;
+            const sum = num1 + num2;
+            document.getElementById('result').innerText = `Result: ${sum}`;
+        }
+    </script>
+
+</body>
+</html>
